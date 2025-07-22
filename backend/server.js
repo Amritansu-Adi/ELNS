@@ -9,7 +9,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET
 
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://elns.onrender.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json()); // Ensure this middleware is applied
 // //('MONGO_URI:', process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI);
