@@ -19,23 +19,23 @@ const UpdateNews = () => {
   }, []);
 
   const fetchNationalNews = async () => {
-    const response = await axios.get("https://elns-server.onrender.com/api/national-news");
+    const response = await axios.get("https://elns-server-6qen.onrender.comm/api/national-news");
     setNationalNews(Array.isArray(response.data) ? response.data : []);
   };
 
   const fetchInternationalNews = async () => {
-    const response = await axios.get("https://elns-server.onrender.com/api/international-news");
+    const response = await axios.get("https://elns-server-6qen.onrender.com/api/international-news");
     setInternationalNews(Array.isArray(response.data) ? response.data : []);
   };
 
   const fetchMarketNews = async () => {
-    const response = await axios.get("https://elns-server.onrender.com/api/market-news");
+    const response = await axios.get("https://elns-server-6qen.onrender.com/api/market-news");
     setMarketNews(Array.isArray(response.data) ? response.data : []);
     //(response.data);
   };
 
   const fetchUpdates = async () => {
-    const response = await axios.get("https://elns-server.onrender.com/api/updates");
+    const response = await axios.get("https://elns-server-6qen.onrender.com/api/updates");
     setUpdates(Array.isArray(response.data) ? response.data : []);
     //(response.data);
   };
@@ -69,7 +69,7 @@ const UpdateNews = () => {
   };
 
   const handleDelete = async (id, type) => {
-    await axios.delete(`https://elns-server.onrender.com/api/${type}/${id}`);
+    await axios.delete(`https://elns-server-6qen.onrender.com/api/${type}/${id}`);
     if (type === "national") {
       fetchNationalNews();
     } else if (type === "international") {
