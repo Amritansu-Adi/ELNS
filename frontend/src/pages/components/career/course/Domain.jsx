@@ -37,7 +37,7 @@ const Domain = (props) => {
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const response = await axios.get('https://elns-server.onrender.com/api/updates');
+        const response = await axios.get('https://elns-server-6qen.onrender.com/api/updates');
         console.log('Announcements fetched:', response.data);
         setActiveSection(response.data.map(item => item.heading));
       } catch (error) {
