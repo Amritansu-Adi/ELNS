@@ -9,7 +9,7 @@ const Login = () => {
     e.preventDefault();
     // //(username, password);
     try {
-      const response = await axios.post('/api/login', {
+      const response = await axios.post('https://elns-server.onrender.com/api/login', {
         username,
         password,
       });
