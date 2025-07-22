@@ -24,7 +24,7 @@ const News = () => {
 
   const fetchNationalNews = async () => {
   try {
-    const response = await axios.get('/api/national-news');
+    const response = await axios.get('https://elns-server.onrender.com/api/national-news');
     setNationalNews(Array.isArray(response.data) ? response.data : []);
   } catch (error) {
     setNationalNews([]); // fallback to empty array on error
@@ -34,7 +34,7 @@ const News = () => {
 
 const fetchInternationalNews = async () => {
   try {
-    const response = await axios.get('/api/international-news');
+    const response = await axios.get('https://elns-server.onrender.com/api/international-news');
     setInternationalNews(Array.isArray(response.data) ? response.data : []);
   } catch (error) {
     setInternationalNews([]);
@@ -44,7 +44,7 @@ const fetchInternationalNews = async () => {
 
 const fetchMarketNews = async () => {
   try {
-    const response = await axios.get('/api/market-news');
+    const response = await axios.get('https://elns-server.onrender.com/api/market-news');
     setMarketNews(Array.isArray(response.data) ? response.data : []);
   } catch (error) {
     setMarketNews([]);
