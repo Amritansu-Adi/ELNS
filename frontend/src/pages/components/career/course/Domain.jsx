@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from '../../../../libraries/axiosInstance';
 import DomainList from "./DomainList";
 import pin from "../../../../assets/images/boardPin.png";
 import "./Domain.css";

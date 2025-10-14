@@ -143,13 +143,13 @@ app.delete('/api/updates/:id', async (req, res) => {
 });
 
 // Serve static files from the React app (frontend build)
-const path = require('path');
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Catch-all handler to serve React's index.html for any unknown route
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+// });
 
 app.listen(PORT, () => {
   //(`Server is running on port ${PORT}`);

@@ -83,13 +83,12 @@
 
 .social-media {
     padding-top: 10%;
-    display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
 .social-icons {
     display: flex;
+    padding-left: 33%;
     gap: 10px;
 }
 
@@ -121,14 +120,14 @@
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-    .footer-content {
+/* @media (max-width: 768px) { */
+    /* .footer-content {
         flex-direction: column;
         align-items: center;
-    }
+    } */
 
-    .contact-us form {
-        width: 100%;
+    /* .contact-us form {
+        width: 70%;
         padding: 0 10px;
     }
 
@@ -138,14 +137,17 @@
 
     .social-icons {
         justify-content: center;
-    }
+    } */
 
-    .footer > .update {
+    /* .footer > .update {
         bottom: 10px;
-    }
-}
+    } */
+/* } */
 
-@media (max-width: 480px) {
+
+/* @media (max-width: 480px) {
+
+
     .contact-us h4 {
         font-size: 1rem;
     }
@@ -164,5 +166,92 @@
         font-size: 0.8rem;
         height: 1.5rem;
         width: 2.5rem;
+    }
+} */
+
+
+/* ...existing code... */
+
+@media (max-width: 480px) { 
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: fit-content;
+        padding-bottom: 4.2rem;
+        /* padding-left: 0.5rem; */
+        padding-right: 1rem;
+    }
+    .contact-us {
+        position: relative;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-evenly;
+        gap: 10px;
+        height: fit-content;
+        padding-top: 20px;
+    } 
+    .contact-us .contact-form {
+        width: 70%;
+        padding: 0 5px;
+        align-items: center;
+        top: 50%;
+    } 
+
+    .contact-us > h4 {
+        font-size: 1rem;
+        position:absolute;
+        top: -10px;
+        left: 40%;
+    }
+
+    .contact-us .social-media{
+        /* padding-top: 0%; */
+        /* position: relative; */
+        top: 0px;
+        left: 50%;
+        width: 30%;
+        height: fit-content;
+        padding: 0px;
+        padding-bottom: 40px;
+    }
+
+    .social-media h4{
+        font-size: 1rem;
+        /* position: absolute;
+        top: 7%;
+        left: 80%; */
+        margin-left: 28%;
+
+
+    }
+    .social-media > .follow-us{
+        position: absolute;
+        top: 100%;
+        left: 20px;
+
+    }
+
+    .social-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items: center;
+        position:relative;
+        gap: 0px;
+        left: 17%;
+    }
+    .social-icons a {
+        font-size: 1.2rem;
+        padding: 2px;
+    }
+    .footer > .update {
+        font-size: 0.8rem;
+        height: 1.5rem;
+        width: 2.5rem;
+        left: 1rem;
+        bottom: 10px;
     }
 }

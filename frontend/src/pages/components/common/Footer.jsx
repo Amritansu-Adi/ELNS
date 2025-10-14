@@ -77,8 +77,10 @@ function Footer() {
           
         
             <div className='social-media'>
-                <p>Email: contactuselns@gmail.com</p>
+                <div className='follow-us'>
+                  <p>Email: contactuselns@gmail.com</p>
                 <p>Phone: +91 6396672886</p>
+                </div>
                 <h4>Follow Us</h4>
               
                 <div className='social-icons'>

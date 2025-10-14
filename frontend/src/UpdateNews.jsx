@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from './libraries/axiosInstance';
 import "./UpdateNews.css"; // Importing the CSS file
 
 const UpdateNews = () => {

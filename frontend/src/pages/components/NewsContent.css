@@ -68,6 +68,7 @@
 @media (max-width: 480px) {
     .newsContent {
         width: 15rem; /* Adjust width for extra small screens */
+        background: #45454563;
     }
 
     .newsContent h1 {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../../libraries/axiosInstance';
 import UpdateNews from '../../UpdateNews';
 const Login = () => {
   const [username, setUsername] = useState('');

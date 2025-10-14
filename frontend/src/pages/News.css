@@ -1,174 +1,128 @@
-.design {
-    position: static;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -100; /* Ensure it stays behind the main content */
-    /* align-items: center;
-    justify-content: center; */
+/* Main news container starts 40% from top, overlays design */
+.main {
+	/* position: relative; */
+	margin-top: 10%;
+	z-index: 2;
+	background: rgba(18, 17, 17, 0.55);
+	border-radius: 20px;
+	box-shadow: 0 4px 32px rgba(67, 64, 64, 0.058);
+	padding: 3rem 2rem 2rem 2rem;
+	border: 1px solid rgba(255,255,255,0.08);
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: 0;
+	margin-right: 0;
+	/* No overflow or height properties, so all content is visible and page scrolls naturally */
+}
+/* News Page Layout */
+.newsPage {
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background: transparent;
 }
 
+/* Design as full background */
+.design {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 0;
+	pointer-events: none;
+	background: transparent;
+}
 .design .background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    left: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.design .newsLogo {
+    position: absolute;
     object-fit: cover;
-    mix-blend-mode: screen;
-    /* rotate: deg; */
-    /* animation: slideAnimation 20s linear infinite; */
-    /* animation: slideInAnimation 20s linear infinite; */
+    z-index: 1;
+    top: 2%;
+    left: 2%;
+    height: 7%;
+    width: 5%;
+    min-width: 48px;
+    min-height: 28px;
 }
 
 .design .boy {
-    position: absolute;
-    top: 8%;
-    right: 3%;
-    height: 50%;
-    width: 30%;
-    rotate: -15deg;
-    object-fit: contain;
-    mix-blend-mode: color-dodge;
+	/* position: absolute;
+	top: 8%;
+	right: 3%;
+	height: 50%;
+	width: 30%;
+	object-fit: contain;
+	z-index: 1; */
+    display: none;
 }
 
-.design .newsLogo {
-    position: absolute;
-    top: 5%;
-    left: 3%;
-    height: 10%;
-    width: 5%;
-    object-fit: cover;
-    mix-blend-mode: hard-light;
-    /* animation: newsLogoAnimation 5s ease-in; */
+/* Market, National, International Content */
+.marketContent, .nationalContent, .internationalContent {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
 }
 
-.main {
-    top: 40%;
-    overflow-y: scroll;
+.marketContent > *, .nationalContent > *, .internationalContent > * {
+  flex: 0 0 24%;
+  max-width: 24%;
+  min-width: 220px;
+  scroll-snap-align: start;
+  box-sizing: border-box;
 }
 
-.main .national, .main .international, .main .market {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Use auto to enable horizontal scrolling */
-    scroll-snap-type: x mandatory;
-    position: relative;
+@media (max-width: 900px) {
+  .marketContent > *, .nationalContent > *, .internationalContent > * {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
 }
 
-.main .national .nationalContent, .main .international .internationalContent, .main .market .marketContent {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Use auto to enable horizontal scrolling */
-    scroll-snap-type: x mandatory;
+@media (max-width: 600px) {
+  .marketContent > *, .nationalContent > *, .internationalContent > * {
+    flex: 0 0 70%;
+    max-width: 70%;
+    min-width: 180px;
+  }
 }
 
-.nationalContent > p, .internationalContent > p, .marketContent > p {
-    margin: 0;
-    padding: 0;
-    margin-top: 1rem;
-    /* font-size: 1.2rem; */
-    color: rgb(230, 255, 2);
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+/* Navigation buttons for each section */
+.market, .national, .international {
+  position: relative;
 }
 
-.main > h1 {
-    font-size: 1.8rem;
-    color: white;
-    margin: 0;
-    z-index: 100;
-    text-align: center;
-    display: block;
-    width: 100%;
-    padding-top: 4%;
+.navigationButton.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
-.main .national::-webkit-scrollbar, .main .international::-webkit-scrollbar, .main .market .marketContent::-webkit-scrollbar {
-    display: none; /* Hide horizontal scrollbar */
+.navigationButton.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .design .boy {
-        top: 10%;
-        right: 5%;
-        height: 40%;
-        width: 25%;
-    }
-
-    .design .newsLogo {
-        top: 6%;
-        left: 4%;
-        height: 8%;
-        width: 6%;
-    }
-
-    .main > h1 {
-        font-size: 1.5rem;
-        padding-top: 3%;
-    }
-
-    .main .national .nationalContent, .main .international .internationalContent, .main .market .marketContent {
-        height: 35%;
-    }
-}
-
-@media (max-width: 768px) {
-    .design .boy {
-        top: 12%;
-        right: 7%;
-        height: 35%;
-        width: 20%;
-    }
-
-    .design .newsLogo {
-        top: 7%;
-        left: 5%;
-        height: 10%;
-        width: 10%;
-    }
-
-    .main > h1 {
-        font-size: 1.2rem;
-        padding-top: 2%;
-    }
-
-    .main .national .nationalContent, .main .international .internationalContent, .main .market .marketContent {
-        height: 30%;
-    }
-}
-
-@media (max-width: 480px) {
-    .design .boy {
-        top: 15%;
-        right: 10%;
-        height: 30%;
-        width: 15%;
-    }
-
-    .design .newsLogo {
-        top: 8%;
-        left: 6%;
-        height: 10%;
-        width: 10%;
-        /* object-fit: contain; */
-    }
-
-    .main > h1 {
-        font-size: 1rem;
-        padding-top: 1%;
-    }
-
-    .main .national .nationalContent, .main .international .internationalContent, .main .market .marketContent {
-        height: 25%;
-    }
+@media (max-width: 900px) {
+  .navigationButton.left, .navigationButton.right {
+    font-size: 1.2rem;
+    padding: 0.7rem;
+  }
 }

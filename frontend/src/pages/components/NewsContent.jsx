@@ -1,5 +1,6 @@
 import React from 'react';
 import './NewsContent.css';
+import axios from '../../libraries/axiosInstance';
 
 const NewsContent = ({ title, content, link }) => {
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Certificates.css"; // Importing the improved CSS file
+import axios from '../../../libraries/axiosInstance';
 
 const Certificates = ({ certificates }) => {
   const certificatesList = certificates.map((certificate, index) => (

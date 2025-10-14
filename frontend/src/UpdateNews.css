@@ -117,4 +117,57 @@
   .delete-btn:hover {
     background: #c82333;
   }
-  
+
+  @media (max-width: 800px) {
+    .update-news-container {
+      width: 98vw;
+      padding: 10px;
+      margin: 20px auto;
+    }
+    .forms-container {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+    .news-form-container {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+    .news-form {
+      padding: 12px;
+    }
+    .section-title {
+      font-size: 18px;
+      margin-top: 14px;
+    }
+    .news-item {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 8px;
+    }
+    .delete-btn {
+      margin-top: 8px;
+      width: 100%;
+    }
+  }
+
+  /* Add more spacing between sections for clarity */
+  .section-title {
+    margin-top: 32px;
+    margin-bottom: 8px;
+  }
+
+  .news-list {
+    margin-bottom: 24px;
+  }
+
+  /* Slightly larger input and button for accessibility */
+  .news-form input {
+    font-size: 17px;
+    padding: 12px;
+  }
+  .btn {
+    font-size: 17px;
+    padding: 12px;
+  }

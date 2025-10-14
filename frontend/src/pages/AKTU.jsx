@@ -408,11 +408,6 @@ const AKTU = () => {
         CCS University Results
       </a>
     </li>
-    <li>
-      <a href="https://nietcloud.niet.co.in/login.htm;jsessionid=64A6F6ABAB40A372F00D9FE67DFCDC52?failure=true" target="_blank" rel="noopener noreferrer">
-        NIET Results
-      </a>
-    </li>
   </ul>
 </section>
       <h2 className='examTitle'>📑 Exam Preparation Resources</h2>

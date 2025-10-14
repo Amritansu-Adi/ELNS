@@ -4,7 +4,7 @@ import NavigationButton from './components/common/NavigationButton';
 import Background from '../assets/images/earthVideo.mp4';
 import boy from '../assets/images/boy-without-Background.png';
 import newsLogo from '../assets/images/newsLogo.jpg';
-import axios from 'axios';
+import axios from '../libraries/axiosInstance';
 import './News.css';
 
 const News = () => {
@@ -64,7 +64,7 @@ const fetchMarketNews = async () => {
   ));
 
   return (
-    <>
+    <div className='newsPage'>
       <div className='design'>
         <video autoPlay loop muted className ='background' type='video/mp4'>
           <source src={Background} type='video/mp4' />
@@ -75,30 +75,30 @@ const fetchMarketNews = async () => {
       <div className='main'>
         <h1>Market at a Glance</h1>
         <div className='market'>
-          <NavigationButton class = 'hide-on-mobile' direction='left' text='<' active = {marketNews.length > 4 ? true : false} onClick={() => scroll(marketRef, 'left')} />
+          <NavigationButton class='hide-on-mobile' direction='left' text='<' active={marketNews.length > 3} onClick={() => scroll(marketRef, 'left')} />
           <div className='marketContent' ref={marketRef}>
-            {marketNews.length > 0? news(marketNews) : <p>No News Available</p>}
+            {marketNews.length > 0 ? news(marketNews) : <p>No News Available</p>}
           </div>
-          <NavigationButton class = 'hide-on-mobile' direction='right' text='>' active = {marketNews.length > 4 ? true : false} onClick={() => scroll(marketRef, 'right')} />
+          <NavigationButton class='hide-on-mobile' direction='right' text='>' active={marketNews.length > 3} onClick={() => scroll(marketRef, 'right')} />
         </div>
         <h1>National News</h1>
         <div className='national'>
-          <NavigationButton class = 'hide-on-mobile' direction='left' text='<' active = {nationalNews.length > 4 ? true : false} onClick={() => scroll(nationalRef, 'left')} />
+          <NavigationButton class = 'hide-on-mobile' direction='left' text='<' active = {nationalNews.length > 3 ? true : false} onClick={() => scroll(nationalRef, 'left')} />
           <div className='nationalContent' ref={nationalRef}>
             {nationalNews.length > 0? news(nationalNews) : <p>No News Available</p>}
           </div>
-          <NavigationButton class = 'hide-on-mobile' direction='right' text='>' active = {nationalNews.length > 4 ? true : false} onClick={() => scroll(nationalRef, 'right')} />
+          <NavigationButton class = 'hide-on-mobile' direction='right' text='>' active = {nationalNews.length > 3 ? true : false} onClick={() => scroll(nationalRef, 'right')} />
         </div>
         <h1>International News</h1>
         <div className='international'>
-          <NavigationButton class = 'hide-on-mobile' direction='left' text='<' active = {internationalNews.length > 4 ? true : false} onClick={() => scroll(internationalRef, 'left')} />
+          <NavigationButton class = 'hide-on-mobile' direction='left' text='<' active = {internationalNews.length > 3 ? true : false} onClick={() => scroll(internationalRef, 'left')} />
           <div className='internationalContent' ref={internationalRef}>
             {internationalNews.length > 0? news(internationalNews) : <p>No News Available</p>}
           </div>
-          <NavigationButton class = 'hide-on-mobile' direction='right' text='>' active = {internationalNews.length > 4 ? true : false} onClick={() => scroll(internationalRef, 'right')} />
+          <NavigationButton class = 'hide-on-mobile' direction='right' text='>' active = {internationalNews.length > 3 ? true : false} onClick={() => scroll(internationalRef, 'right')} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
